@@ -1,0 +1,214 @@
+.dashboard {
+  max-width: 1200px;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+  
+  h1 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+  }
+  
+  p {
+    color: var(--gray-600);
+  }
+}
+
+.priority-alerts {
+  margin-bottom: 2rem;
+}
+
+.alert-card {
+  .alert-content {
+    display: flex;
+    align-items: center;
+    
+    .alert-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-right: 1rem;
+    }
+    
+    &.urgent .alert-icon { background-color: #fee2e2; }
+    &.warranty .alert-icon { background-color: #fef3c7; }
+    &.stock .alert-icon { background-color: #dbeafe; }
+    
+    .alert-info {
+      h4 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gray-900);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+      }
+      
+      p {
+        color: var(--gray-600);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.stats-grid {
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  .stat-content {
+    display: flex;
+    align-items: center;
+    
+    .stat-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-right: 1rem;
+      
+      &.clients { background-color: var(--primary-100); }
+      &.claims { background-color: #fef3c7; }
+      &.interventions { background-color: #dcfce7; }
+      &.articles { background-color: #fee2e2; }
+    }
+    
+    .stat-info {
+      h3 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: var(--gray-900);
+        line-height: 1;
+        margin-bottom: 0.25rem;
+      }
+      
+      p {
+        color: var(--gray-600);
+        font-size: 0.875rem;
+      }
+    }
+  }
+}
+
+.dashboard-content {
+  gap: 2rem;
+}
+
+.claims-list, .interventions-list {
+  .claim-item, .intervention-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--gray-200);
+    
+    &:last-child {
+      border-bottom: none;
+    }
+    
+    .claim-content, .intervention-content {
+      flex: 1;
+      
+      h4 {
+        font-weight: 600;
+        color: var(--gray-900);
+        margin-bottom: 0.25rem;
+      }
+      
+      p {
+        font-size: 0.75rem;
+        color: var(--gray-600);
+        margin: 0.125rem 0;
+      }
+      
+      .claim-type, .intervention-type {
+        color: var(--primary-600);
+        font-weight: 500;
+      }
+    }
+    
+    .claim-status {
+      margin-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      align-items: flex-end;
+    }
+    
+    .intervention-status {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.badge-sm {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.625rem;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--gray-500);
+}
+
+@media (max-width: 1024px) {
+  .dashboard-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .priority-alerts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .priority-alerts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-content {
+    .stat-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1.25rem;
+    }
+    
+    .stat-info h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  .alert-content {
+    .alert-icon {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+    
+    .alert-info h4 {
+      font-size: 1.25rem;
+    }
+  }
+}
